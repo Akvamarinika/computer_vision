@@ -7,26 +7,28 @@ def lerp(v0, v1, t):
 
 
 def linear_gradient_based_on_existing(your_image):
-    image_empty = np.zeros((size, size, 3), dtype="uint8")
+    size_img = your_image.shape[0]
+    image_empty = np.zeros((size_img, size_img, 3), dtype="uint8")
     main_colors = np.diagonal(your_image, axis1=1, axis2=2, offset=0)
 
     for idx in range(image_empty.shape[0]):
-        up_color = np.repeat(main_colors, 2, axis=0)[:size:]
+        up_color = np.repeat(main_colors, 2, axis=0)[:size_img:]
         image_empty[np.arange(idx + 1), np.arange(idx, -1, -1), :] = up_color[idx]  # над основной диагональю
 
-        down_color = np.repeat(main_colors, 2, axis=0)[size::]
-        image_empty[np.arange(size - 1, idx, -1), np.arange(idx + 1, size)] = down_color[idx]  # под основной диагональю
+        down_color = np.repeat(main_colors, 2, axis=0)[size_img::]
+        image_empty[np.arange(size_img - 1, idx, -1), np.arange(idx + 1, size_img)] = down_color[idx]  # под основной диагональю
 
     return image_empty
 
 
 def another_beautiful_linear_gradient(your_image):
-    image_empty = np.zeros((size, size, 3), dtype="uint8")
+    size_img = your_image.shape[0]
+    image_empty = np.zeros((size_img, size_img, 3), dtype="uint8")
     main_colors = np.diagonal(your_image, axis1=1, axis2=2, offset=0)
 
     for idx in range(image_empty.shape[0]):
-        image_empty[np.arange(size - idx), np.arange(size - idx) + idx, :] = main_colors[idx]  # над основной диагональю
-        image_empty[np.arange(size - idx) + idx, np.arange(size - idx), :] = main_colors[idx]  # под основной диагональю
+        image_empty[np.arange(size_img - idx), np.arange(size_img - idx) + idx, :] = main_colors[idx]  # над основной диагональю
+        image_empty[np.arange(size_img - idx) + idx, np.arange(size_img - idx), :] = main_colors[idx]  # под основной диагональю
 
     return image_empty
 
