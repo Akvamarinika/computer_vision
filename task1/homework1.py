@@ -58,13 +58,13 @@ def images_offset(file_img1, file_img2, ):
 
 
 if __name__ == '__main__':
-    nominal_resolution("../resources/figure1.txt")
-    nominal_resolution("../resources/figure2.txt")
-    nominal_resolution("../resources/figure3.txt")
-    nominal_resolution("../resources/figure4.txt")
-    nominal_resolution("../resources/figure5.txt")
-    nominal_resolution("../resources/figure6.txt")
-    nominal_resolution("../resources/img1.txt")
-    nominal_resolution("../resources/img2.txt")
+    nominal_resolution("resources/figure1.txt")
+    nominal_resolution("resources/figure2.txt")
+    nominal_resolution("resources/figure3.txt")
+    nominal_resolution("resources/figure4.txt")
+    nominal_resolution("resources/figure5.txt")
+    nominal_resolution("resources/figure6.txt")
+    nominal_resolution("resources/img1.txt")
+    nominal_resolution("resources/img2.txt")
 
-    images_offset("../resources/img1.txt", "resources/img2.txt")
+    images_offset("resources/img1.txt", "resources/img2.txt")
