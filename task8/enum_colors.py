@@ -6,7 +6,7 @@ class Color(Enum):
     YELLOW = 0.17       # range:  +- delta
     GREEN = 0.33        # range:  +-delta
     CYAN = 0.5          # range:  +-delta
-    BLUE = 0.67         # range:  +-delta
+    BLUE = 0.66         # range:  +-delta
     MAGENTA = 0.83      # range:  +-delta
     RED_2 = 1           # range:  -delta
 
