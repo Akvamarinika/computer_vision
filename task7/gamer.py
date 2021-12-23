@@ -29,22 +29,11 @@ if __name__ == '__main__':
     time.sleep(5)
     pyautogui.press('space')
 
-    prev_time = time.time()
     start_time = time.time()
-    speedRate = 1.5
-    delta = 0
-
     while True:
-        if time.time() - prev_time > 1:
-            if time.time() - start_time % 1000 == 0:
-                delta += speedRate
-
-            prevTime = time.time()
+        if time.time() - start_time > 3000:
+            delta = 7
             obstacle_zone = get_screenshot(0.4, 0.267, 15 - delta, 0.05)
-
-        # if time.time() - start_time > 3000:
-        #     delta = 7
-        #     obstacle_zone = get_screenshot(0.4, 0.267, 15 - delta, 0.05)
         else:
             obstacle_zone = get_screenshot(0.4, 0.267, 14, 0.05)
 
